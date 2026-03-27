@@ -52,6 +52,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-foreground"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -65,15 +66,15 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border"
+            className="md:hidden bg-black/95 backdrop-blur-lg border-t border-white/10 shadow-xl"
           >
-            <div className="flex flex-col py-4 px-4 gap-3">
+            <div className="flex flex-col py-3 px-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base text-muted-foreground hover:text-primary transition-colors py-1"
+                  className="text-base text-white hover:text-primary transition-colors py-3 border-b border-white/10 last:border-b-0"
                 >
                   {link.label}
                 </a>

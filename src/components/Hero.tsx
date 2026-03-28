@@ -6,6 +6,7 @@ const SUBTITLE = "Computer Science Student | Aspiring Software Developer";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
+  const resumeHref = `${import.meta.env.BASE_URL}Resume.pdf`;
 
   useEffect(() => {
     let index = 0;
@@ -54,7 +55,7 @@ const Hero = () => {
               Contact Me
             </a>
             <a
-              href="/Resume.pdf"
+              href={resumeHref}
               download
               className="px-6 py-3 rounded-lg border border-primary text-primary font-semibold flex items-center gap-2 hover:bg-primary/10 transition-colors"
             >

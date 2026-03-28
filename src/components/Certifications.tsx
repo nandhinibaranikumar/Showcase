@@ -26,7 +26,6 @@ const certs = [
 
 const Certifications = () => {
   const baseUrl = import.meta.env.BASE_URL;
-  const rootPath = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
 
   return (
     <SectionWrapper id="certifications">
@@ -35,7 +34,7 @@ const Certifications = () => {
         {certs.map((cert, i) => (
           <a
             key={i}
-            href={`${window.location.origin}${rootPath}/${cert.pdf}`}
+            href={`${baseUrl}${cert.pdf}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white rounded-xl p-6 border border-black/10 shadow-sm hover:shadow-md transition-all text-center block hover:-translate-y-0.5"
